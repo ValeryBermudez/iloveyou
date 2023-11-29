@@ -1,2 +1,86 @@
-# iloveyou
-This is a website that I made for my bf :)
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Te amo thpvt</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            background-image: url('C:/users/bermu/Downloads/Amor2.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Arial', sans-serif;
+            font-style: italic;
+            font-style: Bold;
+        }
+        .message {
+            display: none;
+            font-size: 90px;
+            color: red;
+            animation: moveLoveMessage 3s infinite; /* Animación de movimiento */
+        }
+        @keyframes moveLoveMessage {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(60px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button-container">
+    <button onclick="showLoveMessage()">Click me!</button>
+    <button onclick="playMusic()">Play Song</button>
+    </div>
+    <div class="message" id="loveMessage">I love you Daddy!</div>
+    <audio id="myAudio">
+        <source src="C:/users/bermu/Downloads/Song.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        function playMusic() {
+            var audio = document.getElementById('myAudio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+        function showLoveMessage() {
+            const message = document.getElementById('loveMessage');
+            message.style.display = 'block';
+            setTimeout(function() {
+                message.style.display = 'none';
+            }, 3000); // Hide the message after 3 seconds (adjust as needed)
+        }
+    </script>
+</body>
+
+</html>
